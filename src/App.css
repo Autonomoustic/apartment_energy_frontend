@@ -25,4 +25,49 @@
   width: 25%;
   height: 500px;
   margin: auto;
+  text-align: center;
+}
+
+.formContainer {
+  display: inline-block;
+  width:300px;
+}
+
+input[type=text], input[type=password], select[type=dropdown]{
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.sign-up {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+.myBuildingContainer {
+  margin: auto;
+  width: 80%;
+  height: 800px;
+  background-color: lightblue;
+  display: flex;
+}
+
+.buildingComponent {
+  margin: auto;
+  width: 25%;
+  height: 300px;
+  background-color: #eee;
+  text-align: center;
+}
+
+.mybuiliding {
+  position: absolute;
+}
+
+.listItem {
+  text-align: left;
+
 }
