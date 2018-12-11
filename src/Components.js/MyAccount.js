@@ -7,8 +7,7 @@ const MyAccount = props => {
       <ul>
         <li className='listItem' >{props.building.users.name}</li>
         <li className='listItem' >{props.building.users.email}</li>
-        <li className='listItem' >{props.building.users.name}</li>
-        <li className='listItem' >{props.building.users.apartment_no + ', ' + props.building.name + ', ' + props.building.address } </li>
+        <li className='listItem' >{props.building.users.apartment_no + ' ' + props.building.name + ', ' + props.building.address } </li>
       </ul>
     </div>
   )

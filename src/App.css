@@ -49,10 +49,12 @@ input[type=text], input[type=password], select[type=dropdown]{
 
 .myBuildingContainer {
   margin: auto;
-  width: 80%;
+  margin-bottom: 10px;
+  width: 70%;
   height: 800px;
   background-color: lightblue;
   display: flex;
+  flex-direction: column;
 }
 
 .buildingComponent {
@@ -64,10 +66,16 @@ input[type=text], input[type=password], select[type=dropdown]{
 }
 
 .mybuiliding {
+  margin: auto;
   position: absolute;
 }
 
 .listItem {
   text-align: left;
+}
 
+.myBuildingRow {
+  margin: auto;
+  width: 100%;
+  display: flex;
 }

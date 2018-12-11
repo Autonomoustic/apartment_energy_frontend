@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
 import './App.css'
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -14,25 +13,36 @@ import MyBuildingContainer from './Containers.js/MyBuildingContainer'
 
 class App extends Component {
   state = {
-    building: building,
+    building: null,
     username: null,
     password: null
   }
 
 
   componentDidMount () {
-    if (localStorage.getItem('username') === building.users.name){
-      this.state.building = building
+    if (localStorage.getItem('username')){
+      this.setState({ building })
     }
+  }
+
+  logOutUser = () => {
+    localStorage.clear('username')
+    this.setState({
+      building: null,
+      username: null,
+      password: null
+    })
   }
 
   loginExisitingUser = (event) => {
     event.preventDefault()
 
-    if (event.target.username === building.users.name) {
+    if (event.target.uname.value) {
       this.setState({
+        building: building,
         username: event.target.uname.value,
-        password: event.target.password.value
+        password: event.target.psw.value
+
       })
     }
 
@@ -41,7 +51,7 @@ class App extends Component {
 
   renderHomePage = () => {
     if (this.state.building){
-        return <MyBuildingContainer building={this.state.building}/>
+        return <MyBuildingContainer logOutUser={this.logOutUser} building={this.state.building}/>
     } else {
       return (
         <>
@@ -60,8 +70,7 @@ class App extends Component {
         <div>
           <h1 className='logo'>Apartment Energy</h1>
           <div className='flex'>
-
-            <Route path='/home' render={() => this.renderHomePage()} />
+            <Route exact path='/home' render={() => this.renderHomePage()} />
           </div>
         </div>
       </Router>
